@@ -1,0 +1,18 @@
+{
+    "name": "pc/mvcoop",
+    "autoload": {
+        "psr-4": {
+            "Pc\\Mvcoop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Trandat04",
+            "email": "149884022+Trandat04@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "bramus/router": "~1.6",
+        "eftec/bladeone": "^4.9"
+    }
+}

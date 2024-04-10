@@ -1,0 +1,56 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('title'); ?>
+ Trang chủ
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection('content'); ?>
+ <!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Home</title>
+ </head>
+
+ <body>
+ </body>
+
+ </html>
+
+
+
+ <!-- ======= Post Grid Section ======= -->
+ <section id="posts" class="posts">
+ <div class="container" data-aos="fade-up">
+ <div class="row g-5">
+ <div class="col-lg-4">
+ <?php echo $this->runChild('components.post-entry-1', ['post' => $postFistLatest]); ?>
+
+ </div>
+
+ <div class="col-lg-8">
+ <div class="row g-5">
+ <?php $__currentLoopData = $postTop6Chunk; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $item): $loop = $this->incrementLoopIndices();  ?>
+ <div class="col-lg-6 border-start custom-border">
+ <?php $__currentLoopData = $item; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $post): $loop = $this->incrementLoopIndices();  ?>
+ <?php echo $this->runChild('components.post-entry-1', [
+ 'post' => $post,
+ 'hiddenAuthor' => false,
+ 'hiddenExcerpt' => false,
+ ]); ?>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+
+ </div> <!-- End .row -->
+ </div>
+ </section> <!-- End Post Grid Section -->
+<?php $this->stopSection(); ?>
+
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.master'); } ?>
